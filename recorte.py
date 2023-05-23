@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 # Cargar la imagen
 img = cv2.imread("sample.png")
