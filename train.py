@@ -5,3 +5,5 @@ import cv2
 ###Importar componentes de la red neuronal
 from keras.models import Sequential
 from keras.layers import InputLayer,Input,Conv2D, MaxPool2D,Reshape,Dense,Flatten
+
+"""clase de entrenamiento de la red neuronal"""
