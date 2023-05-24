@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Cargar la imagen
-img = cv2.imread("sample.png")
+img = cv2.imread("assets/c_2.png")
 
 # Convertir la imagen a escala de grises
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -26,4 +26,4 @@ for i, contour in enumerate(contours):
     cropped = img[y:y+h, x:x+w]
 
     # Guardar la imagen recortada para el contorno actual
-    cv2.imwrite(f"contorno_{i}.jpg", cropped)
+    cv2.imwrite(f"assets/contorno_{i}.jpg", cropped)
