@@ -50,7 +50,7 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
             cv2.imwrite(ruta_save, rotarImagen(img, grados))
 
 
-save_dataset(ruta, ruta_origin)
+save_dataset(ruta, ruta_origin, pasos_grados= 1)
 
 
 # Ejemplo de uso
