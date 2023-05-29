@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 
 def recortar_imagen(img):
+    # Cargar la imagen
+    #img = cv2.imread("assets/image/test_cartas-uno-all.png")
 
     # Convertir la imagen a escala de grises
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
