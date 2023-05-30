@@ -14,7 +14,7 @@ formaImagen=(ancho,alto,numero_canales)
 numeroCategorias=10
 
 cantidaDatosEntrenamiento=[360, 360, 360, 360, 360, 360, 360, 360, 360, 360]
-cantidaDatosPruebas=[20,20,20,20,20,20,20,20,20,20]
+cantidaDatosPruebas=[80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
 
 
 def cargarDatos(rutaOrigen, numeroCategorias, limite, ancho, alto):
@@ -91,7 +91,7 @@ model.fit(x=imagenes,y=probabilidades,epochs=30,batch_size=60)
 
 
 #Prueba del modelo
-imagenesPrueba,probabilidadesPrueba=cargarDatos("dataset/test/",numeroCategorias,cantidaDatosPruebas,ancho,alto)
+imagenesPrueba,probabilidadesPrueba=cargarDatos("dataset/train/",numeroCategorias,cantidaDatosPruebas,ancho,alto)
 resultados=model.evaluate(x=imagenesPrueba,y=probabilidadesPrueba)
 print("Accuracy=",resultados[1])
 

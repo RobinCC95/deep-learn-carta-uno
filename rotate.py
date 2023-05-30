@@ -1,8 +1,9 @@
 import cv2
 import numpy as np
-
+import random
 ruta = "dataset/train"
 ruta_origin = "assets/image"
+
 def rotarImagen(img, grados, tamanio=(128, 128)):
     """
     funcion para rotar una imagen
@@ -30,6 +31,25 @@ def rotarImagen(img, grados, tamanio=(128, 128)):
     img_redim = cv2.resize(gray, tamanio)
     return img_redim
 
+def save_dataset_test(ruta, rut_img_ini, limite= 10):
+    """
+    funcion para guardar el dataset de imagenes rotadas en una carpeta
+
+    :param ruta: ruta donde se guardara el dataset
+    :param rut_img_ini:  ruta de las imagenes originales
+    :param limite:  limite de imagenes a rotar
+    :param pasos_grados:  pasos de grados a rotar
+    :return:  None
+    """
+    for categoria in range (limite):
+        ruta_origin_img = rut_img_ini+"/"+ str(categoria)+"_"+str(random.randint(0, 3)) +".jpg"
+        print(ruta_origin_img)
+        for i in range (0,80):
+            ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(i)+".jpg"
+            print(ruta_save)
+            img = cv2.imread(ruta_origin_img)
+            cv2.imwrite(ruta_save, rotarImagen(img, random.randint(0, 360)))
+
 def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
     """
     funcion para guardar el dataset de imagenes rotadas en una carpeta
@@ -41,7 +61,7 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
     :return:  None
     """
     for categoria in range (limite):
-        ruta_origin_img = rut_img_ini+"/"+ str(categoria)+ ".png"
+        ruta_origin_img = rut_img_ini+"/"+ str(categoria)+".jpg"
         print(ruta_origin_img)
         for grados in range (0,360,pasos_grados):
             ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(grados)+".jpg"
@@ -50,8 +70,9 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
             cv2.imwrite(ruta_save, rotarImagen(img, grados))
 
 
-save_dataset(ruta, ruta_origin, pasos_grados= 1)
 
+# save_dataset_test("dataset/test", "assets/image_test", limite= 10, pasos_grados= 1)
+save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
 
 # Ejemplo de uso
 # img = cv2.imread("assets/c_1.png")
