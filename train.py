@@ -65,19 +65,14 @@ model.add(Reshape(formaImagen))
 #Capas Ocultas
 #Capas convolucionales
 
-#kernerl_size=5,5 --> tamaño de la ventana o filtro
-#strides=2,2 --> tamaño del paso
-#padding="same" --> relleno al final de la imagen, same -> duplica las ultimas filas y columnas
-#capa 1
-model.add(Conv2D(kernel_size=5,strides=2,filters=16,padding="same",activation="relu",name="capa_1"))
-#pool_size=2,2 --> tamaño de la ventana o filtro reducido que obtiene los datos mas relevantes de la imagen
-model.add(MaxPool2D(pool_size=2,strides=2))
-#capa 2
-model.add(Conv2D(kernel_size=3,strides=1,filters=36,padding="same",activation="relu",name="capa_2"))
-model.add(MaxPool2D(pool_size=2,strides=2))
-# Capa 3
-model.add(Conv2D(kernel_size=3, strides=1, filters=64, padding="same", activation="relu", name="capa_3"))
+# Capa 1
+model.add(Conv2D(kernel_size=3, strides=1, filters=32, padding="same", activation="relu", name="capa_1"))
 model.add(MaxPool2D(pool_size=2, strides=2))
+
+# Capa 2
+model.add(Conv2D(kernel_size=3, strides=1, filters=64, padding="same", activation="relu", name="capa_2"))
+model.add(MaxPool2D(pool_size=2, strides=2))
+
 
 
 #Aplanamiento

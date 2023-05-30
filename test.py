@@ -11,7 +11,7 @@ miModeloCNN=Prediccion("models/modeloA.h5",ancho,alto)
 # id_carta = input("Ingrese el id de la carta del 0 al 9: ")
 # id_numero = input("Ingrese el id del numero de la carta del 0 al 79: ")
 # imagen=cv2.imread("dataset/test/"+id_carta+"/"+str(id_carta)+"_"+str(id_numero)+".jpg")
-imagen=cv2.imread("dataset/test/7/7_1.jpg")
+imagen=cv2.imread("dataset/test/2/2_50.jpg")
 
 claseResultado=miModeloCNN.predecir(imagen)
 print("La imagen cargada es ",clases[claseResultado])

@@ -65,8 +65,7 @@ def save_dataset_test(ruta, rut_img_ini, limite= 10):
             ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(i)+".jpg"
             print(ruta_save)
             img = cv2.imread(ruta_origin_img)
-            img_normal = scale_tamani_gris(img)
-            cv2.imwrite(ruta_save, rotarImagen(img_normal, random.randint(0, 360)))
+            cv2.imwrite(ruta_save, rotarImagen(img, random.randint(-90, 90)))
 
 
 
@@ -103,12 +102,12 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
 
 
 
-# save_dataset_test("dataset/test", "assets/image_test", limite= 10, pasos_grados= 1)
-save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
+save_dataset_test("dataset/test", "assets/image_test", limite= 10)
+# save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
 
 # Ejemplo de uso
-# img = cv2.imread("assets/c_1.png")
-# rotacion = rotarImagen(img, 35)
+# img = cv2.imread("assets/image/1.jpg")
+# rotacion = rotarImagen(img, -90)
 # cv2.imwrite("assets/rotacion_70.jpg", rotacion)
 
 
