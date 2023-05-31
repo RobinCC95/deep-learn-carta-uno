@@ -2,7 +2,7 @@ from tensorflow.python.keras.models import load_model
 import numpy as np
 import cv2
 
-MODEL_PATH = "models/modeloA.h5"
+MODEL_PATH = "models/modeloC.h5"
 def predict(image):
     model=load_model(MODEL_PATH)
     load_images=[]

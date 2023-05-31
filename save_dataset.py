@@ -70,7 +70,8 @@ def save_dataset_test(ruta, rut_img_ini, limite= 10):
 
 
 
-def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
+def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 1,
+                 image_x_category = 5, move_diag = 10):
     """
     funcion para guardar el dataset de imagenes rotadas en una carpeta
 
@@ -81,25 +82,28 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
     :return:  None
     """
     for categoria in range (limite):
+        print(categoria)
         id_image = 0
-        ruta_origin_img = rut_img_ini+"/"+ str(categoria)+".jpg"
-        print(ruta_origin_img)
-        #rotaacion de imagenes 0 a 360 grados
-        for grados in range (0,360,pasos_grados):
-            ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(grados)+".jpg"
-            print(ruta_save)
-            img = cv2.imread(ruta_origin_img)
-            cv2.imwrite(ruta_save, rotarImagen(img, grados))
+        for image_ini_id in range (image_x_category):
+            ruta_origin_img = rut_img_ini+"/"+ str(categoria)+"/"+str(categoria)+"_"+str(image_ini_id)+".jpg"
+            print(ruta_origin_img)
+            #rotaacion de imagenes 0 a 360 grados
+            for grados in range (0,360,pasos_grados):
+                ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(id_image)+".jpg"
+                id_image += 1
+                print(ruta_save)
+                img = cv2.imread(ruta_origin_img)
+                cv2.imwrite(ruta_save, rotarImagen(img, grados))
 
-        #traslacion de imagenes de -100 a 100 pixeles en x y y de pasos de 10 pixeles
-        id_image = 360
-        for move in range (-100,100,10):
-            ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(id_image)+".jpg"
-            print(ruta_save)
-            img = cv2.imread(ruta_origin_img)
-            img_norm = scale_tamani_gris(img)
-            cv2.imwrite(ruta_save, translate_image(img_norm, move, move))
-            id_image += 1
+            #traslacion de imagenes de -100 a 100 pixeles en x y y de pasos de 10 pixeles
+            for move in range (-100,100,move_diag):
+                ruta_save = ruta+"/"+str(categoria)+"/"+str(categoria)+"_"+str(id_image)+".jpg"
+                id_image += 1
+                print(ruta_save)
+                img = cv2.imread(ruta_origin_img)
+                img_norm = scale_tamani_gris(img)
+                cv2.imwrite(ruta_save, translate_image(img_norm, move, move))
+
 
 
 
@@ -108,9 +112,10 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
 # save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
 
 # Ejemplo de uso
-# img = cv2.imread("assets/image/1.jpg")
-# rotacion = rotarImagen(img, -90)
-# cv2.imwrite("assets/rotacion_70.jpg", rotacion)
+# img = cv2.imread("assets/image_test/1_0.jpg")
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# img = cv2.resize(img, (128,128))
+# cv2.imwrite("assets/rotacion_70.jpg", img)
 
 
 
@@ -125,11 +130,3 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
 # # image3 = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # cv2.imwrite("assets/escala_1.jpg", translate_image(image_gris, shift_x, shift_y))
 
-for k in range (0,5):
-    id = 0
-    print(k,"_",id)
-    for i in range (0,10):
-        print(i)
-        for j in range (0,5):
-            print(i,"_",j)
-            id += 1

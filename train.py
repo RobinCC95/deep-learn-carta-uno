@@ -13,7 +13,7 @@ formaImagen=(ancho,alto,numero_canales)
 #por ser 10 digitos o 10 clasificacinones
 numeroCategorias=10
 
-cantidaDatosEntrenamiento=[380,380,380,380,380,380,380,380,380,380]
+cantidaDatosEntrenamiento=[1900, 1900, 1900,1900, 1900, 1900, 1900, 1900, 1900, 1900]
 cantidaDatosPruebas=[80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
 
 
@@ -87,7 +87,7 @@ model.compile(optimizer="adam",loss="categorical_crossentropy", metrics=["accura
 #Entrenamiento
 #epochs=30 --> cantidad de iteraciones
 #batch_size=60 --> cantidad de datos que se van a procesar en cada iteracion
-model.fit(x=imagenes,y=probabilidades,epochs=30,batch_size=380)
+model.fit(x=imagenes,y=probabilidades,epochs=20,batch_size=300)
 
 
 #Prueba del modelo
