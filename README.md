@@ -9,8 +9,10 @@ El objetivo de este proyecto es desarrollar un agente inteligente capaz de extra
 3. Dataset: El dataset utilizado para entrenar el agente consiste en imágenes que representan los números del 0 al 9. Se generó aplicando rotaciones y traslaciones a las imágenes originales de los objetos asignados por el instructor. Esto permitió capturar la variabilidad en la orientación y posición de los objetos, lo cual es fundamental para entrenar un agente inteligente capaz de reconocer los números representados en dichos objetos.
 
 </p>
-	
-	
+
+## Video 	
+El video de demostracion del proyecto se encuentra en el siguien enlace:
+[Video suma cartas](https://drive.google.com/drive/folders/1QOVKzCTm7_SxgaZvu1dCleP9lo67MhXg?usp=sharing)
 ## Vision artificial
 <p>
 
