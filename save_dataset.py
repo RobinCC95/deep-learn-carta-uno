@@ -108,7 +108,7 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 1,
 
 
 
-save_dataset_test("dataset/test", "assets/image_test", limite= 10)
+# save_dataset_test("dataset/test", "assets/image_test", limite= 10)
 # save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
 
 # Ejemplo de uso
@@ -117,16 +117,4 @@ save_dataset_test("dataset/test", "assets/image_test", limite= 10)
 # img = cv2.resize(img, (128,128))
 # cv2.imwrite("assets/rotacion_70.jpg", img)
 
-
-
-# Ejemplo de uso
-# shift_x = 80
-# shift_y = 80
-# image1 = cv2.imread("assets/image/0.jpg")
-# image_gris = scale_tamani_gris(image1)
-# # cv2.imwrite("assets/escala_1.jpg", image_gris)
-#
-# # image = cv2.resize(image1, (128,128))
-# # image3 = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-# cv2.imwrite("assets/escala_1.jpg", translate_image(image_gris, shift_x, shift_y))
 
