@@ -1,10 +1,12 @@
 import cv2
 import numpy as np
 
-def recortar_imagen(img):
-    # Cargar la imagen
-    #img = cv2.imread("assets/image/test_cartas-uno-all.png")
+WIDTH=128
+HEIGHT=128
 
+def cut(img):
+    #Inicializar imagenes
+    img_list = []
     # Convertir la imagen a escala de grises
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -25,6 +27,12 @@ def recortar_imagen(img):
         # Recortar la región dentro del contorno en la imagen original
         x, y, w, h = cv2.boundingRect(contour)
         cropped = img[y:y + h, x:x + w]
-
+        image = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
+        image = cv2.resize(image, (WIDTH, HEIGHT))
+        cv2.imwrite(f"assets/card_{i}.jpg", image)
+        image = image.flatten()
+        image = image / 255
+        img_list.append(image)
         # Guardar la imagen recortada para el contorno actual
-        cv2.imwrite(f"assets/contorno_{i}.jpg", cropped)
+
+    return img_list
