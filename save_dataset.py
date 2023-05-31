@@ -81,6 +81,7 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
     :return:  None
     """
     for categoria in range (limite):
+        id_image = 0
         ruta_origin_img = rut_img_ini+"/"+ str(categoria)+".jpg"
         print(ruta_origin_img)
         #rotaacion de imagenes 0 a 360 grados

@@ -6,6 +6,13 @@ MODEL_PATH = "models/modeloA.h5"
 def predict(image):
     model=load_model(MODEL_PATH)
     load_images=[]
+
+    #procesar la imagen
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    image = cv2.resize(image, (128, 128))
+    # cv2.imwrite(f"assets/card_{i}.jpg", image)
+    image = image.flatten()
+    image = image / 255
     load_images.append(image)
     load_images_npa=np.array(load_images)
     predictions=model.predict(x=load_images_npa)
