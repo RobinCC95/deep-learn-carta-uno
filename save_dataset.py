@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 import random
 ruta = "dataset/train"
-ruta_origin = "assets/image"
+ruta_origin = "assets/data"
+ruta_origin_test = "assets/image_test"
 
 
 def scale_tamani_gris(img, tamanio=(128, 128)):
@@ -102,7 +103,7 @@ def save_dataset(ruta, rut_img_ini, limite= 10, pasos_grados= 5):
 
 
 
-save_dataset_test("dataset/test", "assets/image_test", limite= 10)
+# save_dataset_test("dataset/test", "assets/image_test", limite= 10)
 # save_dataset(ruta, ruta_origin, limite= 10, pasos_grados= 1)
 
 # Ejemplo de uso
@@ -122,3 +123,12 @@ save_dataset_test("dataset/test", "assets/image_test", limite= 10)
 # # image = cv2.resize(image1, (128,128))
 # # image3 = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # cv2.imwrite("assets/escala_1.jpg", translate_image(image_gris, shift_x, shift_y))
+
+for k in range (0,5):
+    id = 0
+    print(k,"_",id)
+    for i in range (0,10):
+        print(i)
+        for j in range (0,5):
+            print(i,"_",j)
+            id += 1
