@@ -1,5 +1,6 @@
 # Deep-learn-carta-uno
     parcial II carta de uno
+	![imagen](assets/rotacion_70.jpg "imagen")
 ## Vsion artificial
     la vision artificial es un campo de la inteligencia
 
