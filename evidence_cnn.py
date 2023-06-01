@@ -12,12 +12,15 @@ def release_p(key):
         cv2.imwrite(PATH, frame)
         img_list = cut(cv2.imread(PATH))
         result_list = []
+        global suma
         for img in img_list:
-            result_list.append(predict(img))
-        print(result_list)
+             suma += predict(img)
+        print(suma)
 
+suma = 0
 
 video = cv2.VideoCapture(1)
+
 
 listener = kb.Listener(do_nothing_on_press, release_p)
 listener.start()

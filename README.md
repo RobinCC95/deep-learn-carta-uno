@@ -195,4 +195,6 @@ Las conclusiones del proyecto son las siguientes:
 
 Es importante tener en cuenta que el rendimiento de un modelo puede depender del contexto y los requisitos específicos del problema. Se recomienda realizar una validación exhaustiva del modelo en diferentes escenarios y considerar posibles mejoras, como ajustar hiperparámetros, realizar selección de características o utilizar técnicas de aumento de datos, para abordar posibles escenarios de falla.
 
+Ademas de que el correcto funcionamiento del modelo depende tambien del procesamiento de las imagenes porque como tal se necesita un ambiente controlado para realizar las pruebas del modelo.
+
 </p>
